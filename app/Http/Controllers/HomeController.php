@@ -10,6 +10,7 @@ use Illuminate\Contracts\Foundation\Application;
 use Illuminate\Contracts\View\Factory;
 use Illuminate\Contracts\View\View;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class HomeController extends Controller
 {
@@ -40,5 +41,15 @@ class HomeController extends Controller
         $media_files['top_five'] = $this->mediaFileRepository->topFive();
 
         return view('index', compact('media_files'));
+    }
+
+    /**
+     * @return Application|Factory|View
+     */
+    public function dashboard(): View|Factory|Application
+    {
+        $user = $this->userRepository->findById(Auth::id(), ['*'], ['mediaFiles']);
+        $media_files = $user->mediaFiles;
+        return view('dashboard', compact('media_files'));
     }
 }

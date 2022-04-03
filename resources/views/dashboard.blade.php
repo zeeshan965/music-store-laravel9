@@ -1,7 +1,9 @@
 @section('extra_css')
+    <link href="{{ asset ( 'css/auth.min.css' ) }}" rel="stylesheet">
+    <link rel="stylesheet" href=" {{ asset('css/library.min.css') }}">
     <style>
-        #home {
-            padding-top: 10rem;
+        .action-buttons .btn:first-child, .action-buttons .btn:last-child {
+            width: 100%;
         }
     </style>
 @endsection
@@ -16,33 +18,32 @@
     <section id="home">
         <div class="container">
             <div class="row">
-                <div class="col-sm-12">
+                <div id="form-wrap" class="col-sm-12">
                     <h1 class="section-title center">Dashboard</h1>
-                    <div class="panel panel-default">
-                        <div class="panel-body">
-                            <div class="alert alert-info">
-                                Dashboard Items.
-                            </div>
-                            <div class="row pg-entitylist-row">
-                                <div class="col-sm-2 col-xs-3 text-center">
-                                    <img src="{{ asset( '/img/tshirt1.png' ) }}"
-                                         style="width: 55px;height: 55px;border-radius: 50px; padding: 5px; border: 1px solid" />
-                                </div>
-                                <div class="col-sm-5 col-xs-9 pg-col-name">
-                                    <strong class="h-strong">Item for:</strong>
-                                    <a href="http://local.gestr.com/trains">
-                                        <h4>565</h4>
-                                    </a>
-                                </div>
-                            </div>
-                            <hr>
-                        </div>
+                    <div class="bg-color1 auth-form">
+                        <ul class="video-library album"
+                            @if($media_files->count() === 0) style="text-align: center;" @endif>
+                            @forelse($media_files as $file)
+                                <li>
+                                    <a href="javascript:;"
+                                       title="{{ $file->title }}"><span></span><i class="hover-icon"></i></a>
+                                    <img src="{{ $file->thumbnail }}"/>
+                                    <div class="action-buttons">
+                                        <button type="button" class="btn btn-default"
+                                                onclick="window.location.href='{{ route('media.show', $file->id) }}'">
+                                            <i class="fas fa-play"></i> Watch
+                                        </button>
+                                    </div>
+                                </li>
+                            @empty
+                                <li style="height: 12.9em">
+                                    <p>No videos available.</p>
+                                </li>
+                            @endforelse
+                        </ul>
                     </div>
                 </div>
             </div>
-        </div>
-        <div class="divider-bottom-1">
-            <div class="tt"></div>
         </div>
     </section>
     <!-- END HOME SECTION -->

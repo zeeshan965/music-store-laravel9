@@ -28,9 +28,7 @@ Route::group(['middleware' => ['verified', 'auth']], function () {
     Route::get('profile', [UserController::class, 'profile'])->name('profile');
     Route::post('profile', [UserController::class, 'update'])->name('profile.update');
     Route::post('update_password', [UserController::class, 'update_password'])->name('profile.update_password');
-    Route::get('/dashboard', function () {
-        return view('dashboard');
-    })->name('dashboard');
+    Route::get('/dashboard', [HomeController::class, 'dashboard'])->name('dashboard');
     Route::post('payment', [UserController::class, 'payment'])->name('payment');
     Route::resource('media', MediaController::class, ['only' => ['show']]);
 });

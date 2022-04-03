@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Laravel\Sanctum\HasApiTokens;
@@ -43,8 +44,22 @@ class User extends Authenticatable implements MustVerifyEmail
         'email_verified_at' => 'datetime',
     ];
 
-    public function mediaFiles()
+    /**
+     * @return BelongsToMany
+     */
+    public function mediaFiles(): BelongsToMany
     {
-        return $this->belongsToMany(MediaFileUser::class,'','','','','','');
+        return $this->belongsToMany(MediaFile::class, 'media_file_user', 'user_id', 'media_id')
+            ->withTimestamps();
+    }
+
+    /**
+     * @return BelongsToMany
+     */
+    public function mediaFile($id): BelongsToMany
+    {
+        return $this->belongsToMany(MediaFile::class, 'media_file_user', 'user_id', 'media_id')
+            ->where('media_id', $id)
+            ->withTimestamps();
     }
 }

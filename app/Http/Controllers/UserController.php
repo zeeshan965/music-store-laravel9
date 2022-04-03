@@ -2,7 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Interfaces\AlbumRepositoryInterface;
+use App\Interfaces\MediaFileRepositoryInterface;
 use App\Mail\ChangePasswordMailable;
+use App\Models\MediaFile;
 use App\Models\PaymentHistory;
 use App\Models\User;
 use Illuminate\Contracts\Foundation\Application;
@@ -13,12 +16,22 @@ use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
-use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Validation\Rules;
 
 class UserController extends Controller
 {
+
+    /** @var MediaFileRepositoryInterface $mediaFileRepository */
+    private MediaFileRepositoryInterface $mediaFileRepository;
+
+    /**
+     * @param MediaFileRepositoryInterface $mediaFileRepository
+     */
+    public function __construct(MediaFileRepositoryInterface $mediaFileRepository)
+    {
+        $this->mediaFileRepository = $mediaFileRepository;
+    }
 
     /**
      * @return Application|Factory|View
@@ -79,16 +92,17 @@ class UserController extends Controller
     }
 
     /**
-     * Display the specified resource.
-     *
+     * @param Request $request
+     * @return JsonResponse
      */
-    public function payment(Request $request)
+    public function payment(Request $request): JsonResponse
     {
         if (!$request->has("payment_data"))
             return response()->json(['status' => 'error', 'message' => 'Something went wrong, Please contact support!'], 419);
 
         $paymentData = json_decode($request->post('payment_data'), true);
-        PaymentHistory::savePaymentDetails($paymentData);
+        $media_file = $this->mediaFileRepository->findById($request->post('id'));
+        PaymentHistory::savePaymentDetails($paymentData, $media_file);
         return response()->json(['status' => 'success'], 200);
     }
 }

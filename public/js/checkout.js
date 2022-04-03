@@ -1,16 +1,15 @@
 (function () {
-    let price = 0;
-    initPayPalButton();
+    let price = 0, id = 0;
+    if ($("#smart-button-container").length === 1) initPayPalButton();
 })();
 
 /**
  *@param elem
  */
 function renderAttributes(elem) {
-    const id = elem.attr("data-id");
+    id = elem.attr("data-id");
     const thumbnail = elem.attr("data-thumbnail");
     const title = elem.attr("data-title");
-    const cover = elem.attr("data-cover");
     price = elem.attr("data-price");
     $('.modal-title').text(title);
     $('.modal-body p').text(title);
@@ -58,6 +57,7 @@ function initPayPalButton() {
 function dispatchPaymentInformation(orderData) {
     const formData = new FormData();
     formData.append("payment_data", JSON.stringify(orderData));
+    formData.append("id", id);
     sendAjaxRequest('payment', 'post', formData).then((response) => {
         if (typeof (response.status) !== 'undefined' && response.status == 'success') {
             successMessage('Thank you for your payment!', window.location.origin + "/dashboard")

@@ -18,14 +18,19 @@ class PaymentHistory extends Model
 
     /**
      * @param $paymentData
+     * @param MediaFile $media_file
      * @return void
      */
-    public static function savePaymentDetails($paymentData)
+    public static function savePaymentDetails($paymentData, MediaFile $media_file)
     {
+        $user = Auth::user();
+        $user->mediaFiles()->attach($media_file->id);
         $payer = $paymentData['payer'] ?? [];
         $count = count($paymentData['purchase_units']);
+
         self::create([
-            'user_id' => Auth::id(),
+            'user_id' => $user->id,
+            'media_id' => $media_file->id,
             'payment_id' => $paymentData["id"] ?? "",
             "intent" => $paymentData["intent"],
             "status" => $paymentData["status"],

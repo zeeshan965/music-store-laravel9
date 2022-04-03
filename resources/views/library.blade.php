@@ -44,8 +44,10 @@
     <!-- Sweet alert -->
     <script src="{{ asset ( 'js/sweetalert.min.js' ) }}"></script>
     <script src="{{ asset ( 'js/api.js' ) }}"></script>
-    <script
-        src="https://www.paypal.com/sdk/js?client-id=Ad0qWPlwun1UHx8MtnZ2xA4U-cbXTksUV9jIXBiCpTiL7nh5_5GLTZ_2JJ0WTATRlLfQioJvFENAvQ7s&currency=USD&disable-funding=paylater"></script>
+    @if(\Illuminate\Support\Facades\Auth::check())
+        <script
+            src="https://www.paypal.com/sdk/js?client-id=Ad0qWPlwun1UHx8MtnZ2xA4U-cbXTksUV9jIXBiCpTiL7nh5_5GLTZ_2JJ0WTATRlLfQioJvFENAvQ7s&currency=USD&disable-funding=paylater"></script>
+    @endif
     <script src="{{ asset ( 'js/checkout.min.js' ) }}"></script>
 
 @endsection

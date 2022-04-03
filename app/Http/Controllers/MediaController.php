@@ -9,7 +9,7 @@ use Illuminate\Contracts\View\Factory;
 use Illuminate\Contracts\View\View;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
-use Illuminate\Pagination\LengthAwarePaginator;
+use Illuminate\Support\Facades\Auth;
 
 class MediaController extends Controller
 {
@@ -85,6 +85,7 @@ class MediaController extends Controller
     public function show(int $id): View|Factory|Application
     {
         $media = $this->mediaFileRepository->findById($id);
+        if (!Auth::user()->mediaFile($id)->first()) abort('404');
         return view('media_detail', compact('media', 'id'));
     }
 

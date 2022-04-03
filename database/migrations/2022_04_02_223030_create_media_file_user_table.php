@@ -12,10 +12,11 @@ return new class extends Migration {
      */
     public function up()
     {
-        Schema::create('media_file_users', function (Blueprint $table) {
+        Schema::dropIfExists('media_file_user');
+        Schema::create('media_file_user', function (Blueprint $table) {
             $table->id();
-            $table->unsignedInteger("user_id")->nullable();
-            $table->unsignedInteger("media_id")->nullable();
+            $table->unsignedInteger('user_id')->nullable();
+            $table->unsignedInteger('media_id')->nullable();
             $table->timestamps();
             $table->softDeletes();
         });
@@ -28,6 +29,6 @@ return new class extends Migration {
      */
     public function down()
     {
-        Schema::dropIfExists('media_file_users');
+        Schema::dropIfExists('media_file_user');
     }
 };
