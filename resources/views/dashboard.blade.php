@@ -1,11 +1,6 @@
 @section('extra_css')
     <link href="{{ asset ( 'css/auth.min.css' ) }}" rel="stylesheet">
     <link rel="stylesheet" href=" {{ asset('css/library.min.css') }}">
-    <style>
-        .action-buttons .btn:first-child, .action-buttons .btn:last-child {
-            width: 100%;
-        }
-    </style>
 @endsection
 
 @section( 'extra_js' )
@@ -28,7 +23,7 @@
                                     <a href="javascript:;"
                                        title="{{ $file->title }}"><span></span><i class="hover-icon"></i></a>
                                     <img src="{{ $file->thumbnail }}"/>
-                                    <div class="action-buttons">
+                                    <div class="action-buttons full-width">
                                         <button type="button" class="btn btn-default"
                                                 onclick="window.location.href='{{ route('media.show', $file->id) }}'">
                                             <i class="fas fa-play"></i> Watch

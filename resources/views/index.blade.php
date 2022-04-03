@@ -25,6 +25,10 @@
         .album .album-img .album-img-wrap img {
             width: auto;
         }
+
+        .auth-form ul.video-library li span, .gallery-scroller li span {
+            height: 100%;
+        }
     </style>
 
 @endsection
@@ -193,13 +197,23 @@
                     <li>
                         <a href="{{ route("media.show", $file->id) }}"
                            title="{{ $file->title }}"><span></span><i class="hover-icon"></i></a>
-                        <div class="trailer-button">
-                            <button type="button" class="btn"><i class="fa fa-play"></i> Watch Trailer</button>
-                        </div>
-                        <div class="rent-button">
-                            <button type="button" class="btn btn-default"><i class="fas fa-credit-card"></i>
-                                Rent ${{ $file->price }}</button>
-                        </div>
+                        @if($file->user->first())
+                            <div class="rent-button">
+                                <button type="button" class="btn btn-default"
+                                        onclick="window.location.href='{{ route('media.show', $file->id) }}'">
+                                    <i class="fas fa-play"></i> Watch
+                                </button>
+                            </div>
+                        @else
+                            <div class="trailer-button">
+                                <button type="button" class="btn"><i class="fa fa-play"></i> Watch Trailer</button>
+                            </div>
+                            <div class="rent-button">
+                                <button type="button" class="btn btn-default"><i class="fas fa-credit-card"></i>
+                                    Rent ${{ $file->price }}</button>
+                            </div>
+                        @endif
+
                         <img src="{{ $file->thumbnail }}"/>
                     </li>
                 @endforeach
@@ -209,13 +223,22 @@
                     <li>
                         <a href="{{ route("media.show", $offset_file->id) }}"
                            title="{{ $offset_file->title }}"><span></span><i class="hover-icon"></i></a>
-                        <div class="trailer-button">
-                            <button type="button" class="btn"><i class="fa fa-play"></i> Watch Trailer</button>
-                        </div>
-                        <div class="rent-button">
-                            <button type="button" class="btn btn-default"><i class="fas fa-credit-card"></i>
-                                Rent ${{ $offset_file->price }}</button>
-                        </div>
+                        @if($offset_file->user->first())
+                            <div class="rent-button">
+                                <button type="button" class="btn btn-default"
+                                        onclick="window.location.href='{{ route('media.show', $offset_file->id) }}'">
+                                    <i class="fas fa-play"></i> Watch
+                                </button>
+                            </div>
+                        @else
+                            <div class="trailer-button">
+                                <button type="button" class="btn"><i class="fa fa-play"></i> Watch Trailer</button>
+                            </div>
+                            <div class="rent-button">
+                                <button type="button" class="btn btn-default"><i class="fas fa-credit-card"></i>
+                                    Rent ${{ $offset_file->price }}</button>
+                            </div>
+                        @endif
                         <img src="{{ $offset_file->thumbnail }}"/>
                     </li>
                 @endforeach

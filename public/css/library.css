@@ -80,3 +80,7 @@
 .auth-form ul.video-library {
     width: 100%;
 }
+
+.full-width button{
+    width: 100% !important;
+}

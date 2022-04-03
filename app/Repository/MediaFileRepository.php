@@ -90,7 +90,7 @@ class MediaFileRepository extends BaseRepository implements MediaFileRepositoryI
         return $this->model->where(function (Builder $query) use ($request) {
             if ($request->has('album')) $query->where('album_id', $request->get('album'));
             if ($request->has('search')) $query->where('title', 'like', '%' . $request->get('search') . '%');
-        })->where('status', 1)->paginate($total);
+        })->where('status', 1)->with('user')->paginate($total);
     }
 
 }

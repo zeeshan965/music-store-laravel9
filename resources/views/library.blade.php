@@ -29,11 +29,11 @@
             margin: 0 auto;
         }
 
-        .modal-content{
+        .modal-content {
             background-color: #e2e2e2;
         }
 
-        .modal-header{
+        .modal-header {
             border-color: #2c3136;
         }
 
@@ -83,18 +83,28 @@
                                     <a href="javascript:;"
                                        title="{{ $file->title }}"><span></span><i class="hover-icon"></i></a>
                                     <img src="{{ $file->thumbnail }}"/>
-                                    <div class="action-buttons">
-                                        <button type="button" class="btn"
-                                                onclick="window.location.href='{{ route("media.watch_trailer", $file->id) }}'">
-                                            <i class="fa fa-play"></i> Trailer
-                                        </button>
-                                        <button type="button" class="btn btn-default rent-music"
-                                                data-cover="{{ $file->cover }}" data-thumbnail="{{ $file->thumbnail }}"
-                                                data-title="{{ $file->title }}" data-id="{{ $file->id }}"
-                                                data-price="{{ $file->price }}">
-                                            <i class="fas fa-credit-card"></i>
-                                            Rent ${{ $file->price }}</button>
-                                    </div>
+                                    @if($file->user->first())
+                                        <div class="action-buttons full-width">
+                                            <button type="button" class="btn btn-default"
+                                                    onclick="window.location.href='{{ route('media.show', $file->id) }}'">
+                                                <i class="fas fa-play"></i> Watch
+                                            </button>
+                                        </div>
+                                    @else
+                                        <div class="action-buttons">
+                                            <button type="button" class="btn"
+                                                    onclick="window.location.href='{{ route("media.watch_trailer", $file->id) }}'">
+                                                <i class="fa fa-play"></i> Trailer
+                                            </button>
+                                            <button type="button" class="btn btn-default rent-music"
+                                                    data-cover="{{ $file->cover }}" data-thumbnail="{{ $file->thumbnail }}"
+                                                    data-title="{{ $file->title }}" data-id="{{ $file->id }}"
+                                                    data-price="{{ $file->price }}">
+                                                <i class="fas fa-credit-card"></i>
+                                                Rent ${{ $file->price }}</button>
+                                        </div>
+                                    @endif
+
                                 </li>
                             @empty
                                 <li style="height: 12.9em">
