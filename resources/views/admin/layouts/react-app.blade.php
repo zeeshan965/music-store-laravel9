@@ -15,7 +15,7 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
     <!--======================================================== Title =========================================================-->
-    <title>{{ $page_title }} - {{ config('app.name', "Gian’s Music") }}</title>
+    <title>{{ config('app.name', "Gian’s Music") }}</title>
 
     <!--======================================================== Header CSS Files =========================================================-->
     @include('components.head')

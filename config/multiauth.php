@@ -60,7 +60,7 @@ return [
     | redirect the admin after login.
     | Default : /admin/home
     */
-    'redirect_after_login' => '/admin/home',
+    'redirect_after_login' => '/admin/',
 
     /*
     |--------------------------------------------------------------------------
