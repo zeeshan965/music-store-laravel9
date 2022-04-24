@@ -1,16 +1,14 @@
 @extends('multiauth::layouts.app')
+
+@section('extra_js')
+    <script src="{{asset('js/app.js')}}"></script>
+@endsection
 @section('content')
-<div class="container">
-    <div class="row justify-content-center">
-        <div class="col-md-8">
-            <div class="card">
-                <div class="card-header">{{ ucfirst(config('multiauth.prefix')) }} Dashboard</div>
-                <div class="card-body">
-                    @include('multiauth::message')
-                    You are logged in to {{ config('multiauth.prefix') }} side!
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
+
+    <noscript>
+        <strong>We're sorry but this page doesn't work properly without JavaScript enabled. Please
+            enable it to continue.</strong>
+    </noscript>
+    <div id="app"></div>
+    @csrf
 @endsection

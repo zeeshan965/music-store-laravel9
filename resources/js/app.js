@@ -6,13 +6,14 @@
 
 require("./bootstrap");
 
-import React, {StrictMode} from "react";
+import React from "react";
 import {render} from "react-dom";
-import Welcome from "./Pages/Welcome";
+import App from './components/App';
+import {BrowserRouter} from 'react-router-dom';
 
 window.React = React;
 render(
-    <StrictMode>
-        <Welcome/>
-    </StrictMode>, document.getElementById("app")
+    <BrowserRouter>
+        <App appName={appName} userType={userType} baseUrl={base_url} loggedInUser={loggedInUser} token={csrf_token}/>
+    </BrowserRouter>, document.getElementById("app")
 );
