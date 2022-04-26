@@ -18,7 +18,7 @@ export default function Sidebar(props) {
                                 <a href="pages/gallery.html" className="nav-link">
                                     <i className="nav-icon far fa-image"></i>
                                     <p>
-                                        Gallery
+                                        Users
                                     </p>
                                 </a>
                             </li>
@@ -26,7 +26,7 @@ export default function Sidebar(props) {
                                 <a href="pages/gallery.html" className="nav-link">
                                     <i className="nav-icon far fa-image"></i>
                                     <p>
-                                        Gallery
+                                        Subscriptions
                                     </p>
                                 </a>
                             </li>
@@ -34,19 +34,30 @@ export default function Sidebar(props) {
                                 <a href="pages/gallery.html" className="nav-link">
                                     <i className="nav-icon far fa-image"></i>
                                     <p>
-                                        Gallery
+                                        Albums
                                     </p>
                                 </a>
                             </li>
                             <li className="nav-item">
                                 <a href="pages/gallery.html" className="nav-link">
-                                    <i className="nav-icon far fa-image"></i>
+                                    <i className="nav-icon fas fa-photo-video"/>
                                     <p>
-                                        Gallery
+                                        Media
                                     </p>
                                 </a>
                             </li>
-
+                            <li className="nav-item">
+                                <a href={props.baseUrl + 'admin/show'} className="nav-link">
+                                    <i className="nav-icon fas fa-users fa-fw"/>
+                                    <p>Manage Admins</p>
+                                </a>
+                            </li>
+                            <li className="nav-item">
+                                <a className="nav-link" href={props.baseUrl + 'admin/roles'}>
+                                    <i className="nav-icon fas fa-user-tag fa-fw"/>
+                                    <p>Manage Roles</p>
+                                </a>
+                            </li>
                         </ul>
                     </nav>
                 </div>

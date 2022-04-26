@@ -38,7 +38,8 @@ export default function Header(props) {
                             </li>
 
                             <li className="user-footer">
-                                <a href="#" className="btn btn-default btn-flat">Profile</a>
+                                <a href={props.baseUrl + 'admin/password/change'}
+                                   className="btn btn-default btn-flat">Change Password</a>
                                 <a href={props.baseUrl + 'admin/logout'} onClick={logout}
                                    className="btn btn-default btn-flat float-right">Sign out</a>
 
