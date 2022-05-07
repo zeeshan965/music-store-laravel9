@@ -9,11 +9,9 @@
             <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu"
                 data-accordion="false">
                 <li class="nav-item">
-                    <a href="pages/gallery.html" class="nav-link">
+                    <a href="{{ url( '/admin/users' ) }}" class="nav-link">
                         <i class="nav-icon far fa-image"></i>
-                        <p>
-                            Users
-                        </p>
+                        <p>Users</p>
                     </a>
                 </li>
                 <li class="nav-item">

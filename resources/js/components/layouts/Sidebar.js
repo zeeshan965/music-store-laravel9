@@ -15,12 +15,10 @@ export default function Sidebar(props) {
                         <ul className="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu"
                             data-accordion="false">
                             <li className="nav-item">
-                                <a href="pages/gallery.html" className="nav-link">
-                                    <i className="nav-icon far fa-image"></i>
-                                    <p>
-                                        Users
-                                    </p>
-                                </a>
+                                <Link to={"/admin/users"} className="nav-link">
+                                    <i className="nav-icon far fa-image"/>
+                                    <p>Users</p>
+                                </Link>
                             </li>
                             <li className="nav-item">
                                 <a href="pages/gallery.html" className="nav-link">

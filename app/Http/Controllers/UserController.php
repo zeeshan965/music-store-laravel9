@@ -34,6 +34,14 @@ class UserController extends Controller
     }
 
     /**
+     * @return JsonResponse
+     */
+    public function index(): JsonResponse
+    {
+        return response()->json(['users' => User::all()], 200);
+    }
+
+    /**
      * @return Application|Factory|View
      */
     public function profile(): Factory|View|Application

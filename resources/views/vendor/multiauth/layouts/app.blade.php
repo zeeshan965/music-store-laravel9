@@ -27,7 +27,7 @@
         var userId = "{{ request () -> user () === null ? 'null' : request () -> user () -> id }}";
         var loggedInUser = JSON.parse('@php echo request () -> user () === null ? 'null' : request () -> user () -> toJson() @endphp');
         localStorage.setItem("userId", userId);
-        var base_url = '{{ config('app.url')  }}'
+        var base_url = '{{ config('app.url') }}'
         var csrf_token = '{{ csrf_token() }}'
         var appName = '{{config('app.name', 'Laravel')}}';
         var userType = '{{ ucfirst(config('multiauth.prefix')) }}';

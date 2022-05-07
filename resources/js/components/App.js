@@ -5,6 +5,7 @@ import Footer from "./layouts/Footer";
 import Sidebar from "./layouts/Sidebar";
 import {Routes, Route } from 'react-router-dom';
 import Dashboard from "./Dashboard";
+import Users from "./Users";
 
 export default function App(props) {
     const appName = props.appName;
@@ -22,9 +23,10 @@ export default function App(props) {
                 <div className="content-wrapper">
                     <Routes>
                         <Route path="/admin/" element={<Dashboard/>}/>
+                        <Route path="/admin/users" element={<Users/>}/>
                     </Routes>
                 </div>
-                <Footer/>
+                <Footer appName={appName} baseUrl={baseUrl}/>
             </div>
         </>
     );
