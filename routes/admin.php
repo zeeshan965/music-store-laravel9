@@ -5,15 +5,6 @@ use App\Http\Controllers\Admin\AdminController;
 
 // Login and Logout
 Route::GET('/login', 'LoginController@showLoginForm')->name('admin.login');
-
-//Route::GET('/home', function () {
-//    return view('welcome');
-//})->name('admin.login');
-
-//Route::get('/{react?}', function () {
-//    return view('admin.layouts.react-app');
-//})->where('react', '[\/\w\.-]*');
-
 Route::POST('/login', 'LoginController@login');
 Route::POST('/logout', 'LoginController@logout')->name('admin.logout');
 

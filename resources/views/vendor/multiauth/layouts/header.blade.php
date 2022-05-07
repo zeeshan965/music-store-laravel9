@@ -1,54 +1,40 @@
-<nav class="navbar navbar-expand-md navbar-light navbar-laravel">
-    <div class="container">
+<nav class="main-header navbar navbar-expand navbar-dark">
+    <ul class="navbar-nav">
+        <li class="nav-item">
+            <a class="nav-link" data-widget="pushmenu" href="#" role="button">
+                <i class="fas fa-bars"></i>
+            </a>
+        </li>
+    </ul>
 
+    <ul class="navbar-nav ml-auto">
+        <li class="nav-item dropdown user-menu">
+            <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">
 
+                <img src="{{ asset( 'dist/img/user2-160x160.jpg' ) }}" class="user-image img-circle elevation-2"
+                     alt="User Image"/>
+                <span class="d-none d-md-inline">{{ Auth::user()->name }}</span>
+            </a>
+            <ul class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
 
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <!-- Left Side Of Navbar -->
-            <ul class="navbar-nav mr-auto">
+                <li class="user-header bg-primary">
+                    <img src="{{ asset( 'dist/img/user2-160x160.jpg' ) }}"
+                         class="img-circle elevation-2" alt="User Image"/>
+                    <p>
+                        {{ Auth::user()->name }} - {{ ucfirst(config('multiauth.prefix')) }}
+                    </p>
+                </li>
 
+                <li class="user-footer">
+                    <a href="{{ url( 'admin/password/change' ) }}" class="btn btn-default btn-flat">Change Password</a>
+                    <a href="{{ url( 'admin/logout' ) }}" onClick={logout} class="btn btn-default btn-flat float-right">Sign
+                        out</a>
+
+                    <form id="logout-form" action="{{ url( 'admin/logout' ) }}" method="POST" style="display: none;">
+                        <input type="hidden" name="_token" value={props.token}/>
+                    </form>
+                </li>
             </ul>
-
-            <!-- Right Side Of Navbar -->
-            <ul class="navbar-nav ml-auto">
-                <!-- Authentication Links -->
-                @guest('admin')
-                    <li class="nav-item">
-                        <a class="nav-link" href="{{route('admin.login')}}">{{ ucfirst(config('multiauth.prefix'))
-                                }} Login</a>
-                    </li>
-                @else
-                    <li class="nav-item dropdown">
-                        <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button"
-                           data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                            {{ auth('admin')->user()->name }} <span class="caret"></span>
-                        </a>
-
-                        <div style="display: block" class="dropdown-menu dropdown-menu-right"
-                             aria-labelledby="navbarDropdown">
-                            @admin('super')
-                            <a class="dropdown-item" href="{{ route('admin.show') }}">{{
-                                    ucfirst(config('multiauth.prefix')) }}</a>
-                            @permitToParent('Role')
-                            <a class="dropdown-item" href="{{ route('admin.roles') }}">Roles</a>
-                            @endpermitToParent
-                            @endadmin
-                            <a class="dropdown-item" href="{{ route('admin.password.change') }}">Change Password</a>
-                            <a class="dropdown-item" href="/admin/logout" onclick="event.preventDefault();
-                                                     document.getElementById('logout-form').submit();">
-                                {{ __('Logout') }}
-                            </a>
-                            <form id="logout-form" action="{{ route('admin.logout') }}" method="POST"
-                                  style="display: none;">
-                                @csrf
-                            </form>
-                        </div>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="{{ url('admin/products') }}">Products</a>
-                    </li>
-                @endguest
-            </ul>
-        </div>
-    </div>
+        </li>
+    </ul>
 </nav>

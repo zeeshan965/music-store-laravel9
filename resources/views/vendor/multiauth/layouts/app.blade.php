@@ -36,9 +36,12 @@
 </head>
 <body class="hold-transition dark-mode sidebar-mini layout-fixed layout-navbar-fixed layout-footer-fixed">
 
-    @include('multiauth::message')
+    @if(in_array(Request::segment(2),$allowedPages) || in_array(Request::segment(3),$allowedPages))
+        @include('vendor.multiauth.layouts.loader')
+        @include('vendor.multiauth.layouts.header')
+        @include('vendor.multiauth.layouts.sidebar')
+    @endif
 
-    @include('vendor.multiauth.layouts.header')
     <main class="py-4">
         @yield('content')
     </main>
