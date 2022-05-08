@@ -1,6 +1,9 @@
 import React from 'react';
 import {useState, useEffect} from "react";
-import http from "../http"
+import http from "../http";
+import "../../../public/plugins/datatables/jquery.dataTables.min.js";
+import "../../../public/plugins/datatables-bs4/js/dataTables.bootstrap4.min.js";
+import "../../../public/plugins/datatables-responsive/js/dataTables.responsive.min.js";
 
 export default function Users(props) {
     const [users, setUsers] = useState([]);
@@ -14,6 +17,7 @@ export default function Users(props) {
             const res = response.data;
             console.log(res)
             setUsers(res.users);
+            $('#data-table').DataTable();
         })
     }
 
@@ -40,7 +44,7 @@ export default function Users(props) {
                         <div className="col-12">
                             <div className="card">
                                 <div className="card-body p-0">
-                                    <table className="table table-bordered table-hover">
+                                    <table id="data-table" className="table table-bordered table-hover">
                                         <thead>
                                         <tr>
                                             <th>Sno.</th>

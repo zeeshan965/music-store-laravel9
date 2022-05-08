@@ -23,6 +23,12 @@
     <!--======================================================== Extra CSS Files =========================================================-->
     @yield('extra_css')
 
+    <style>
+        .card {
+            box-shadow: none;
+            background-color: transparent;
+        }
+    </style>
     <script type="text/javascript">
         var userId = "{{ request () -> user () === null ? 'null' : request () -> user () -> id }}";
         var loggedInUser = JSON.parse('@php echo request () -> user () === null ? 'null' : request () -> user () -> toJson() @endphp');
@@ -34,7 +40,7 @@
     </script>
 
 </head>
-<body class="hold-transition dark-mode sidebar-mini layout-fixed layout-navbar-fixed layout-footer-fixed">
+<body class="hold-transition sidebar-mini layout-fixed layout-navbar-fixed layout-footer-fixed">
 
     @if(in_array(Request::segment(2),$allowedPages) || in_array(Request::segment(3),$allowedPages))
         @include('vendor.multiauth.layouts.loader')
