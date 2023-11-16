@@ -8,9 +8,9 @@ $(function ($) {
         // Components
         slide_links: 'false',
         slides: [			// Slideshow Images
-            {image: 'http://local.beat-html.com/html/img/background_img.jpg'},
-            {image: 'http://local.beat-html.com/html/img/background_img2.jpg'},
-            {image: 'http://local.beat-html.com/html/img/background_img3.jpg'}
+            {image: '/html/img/background_img.jpg'},
+            {image: '/html/img/background_img2.jpg'},
+            {image: '/html/img/background_img3.jpg'}
         ]
     });
 });

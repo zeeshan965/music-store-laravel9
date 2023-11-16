@@ -1,0 +1,132 @@
+/*
+* Author: Wisely Themes
+* Author URI: http://themeforest.net/user/wiselythemes
+* Theme Name: Beat
+* Version: 1.0.3
+*/
+
+body { background-color:#fff;}
+.bg-color1{ background-color:#f5f5f5;}
+.bg-color2{ background-color:#e2e2e2;}
+section{	background-color:#f5f5f5;}
+textarea,
+input[type="text"],
+input[type="password"],
+input[type="datetime"],
+input[type="datetime-local"],
+input[type="date"],
+input[type="month"],
+input[type="time"],
+input[type="week"],
+input[type="number"],
+input[type="email"],
+input[type="url"],
+input[type="search"],
+input[type="tel"],
+input[type="color"],
+.uneditable-input { background-color: rgba(255, 255, 255, 0.6); border: 1px solid rgba(0, 0, 0, 0.15);}
+textarea:focus,
+input[type="text"]:focus,
+input[type="password"]:focus,
+input[type="datetime"]:focus,
+input[type="datetime-local"]:focus,
+input[type="date"]:focus,
+input[type="month"]:focus,
+input[type="time"]:focus,
+input[type="week"]:focus,
+input[type="number"]:focus,
+input[type="email"]:focus,
+input[type="url"]:focus,
+input[type="search"]:focus,
+input[type="tel"]:focus,
+input[type="color"]:focus,
+.uneditable-input:focus { -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(0, 0, 0, 0.2); -moz-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(0, 0, 0, 0.2); box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(0, 0, 0, 0.2);}
+.btn.btn-only-icon:hover{ background-color:#fff; border-color:#fff;}
+.btn-dark,
+.btn-dark:focus { background-color: #e9e9e9; border-color:#e9e9e9; text-shadow: 0 1px 0 rgba(0,0,0,0.2); -webkit-box-shadow: 0px 0px 2px 2px rgba(0, 0, 0, 0.1); -moz-box-shadow: 0px 0px 2px 2px rgba(0, 0, 0, 0.1); box-shadow: 0px 0px 2px 2px rgba(0, 0, 0, 0.1);}
+.btn-dark.btn.btn-icon span:before{ background-color:rgba(255,255,255,0.35); }
+.btn-dark.btn-icon:hover span:before{ background-color:rgba(255,255,255,0.75); }
+.btn-dark2,
+.btn-dark2:focus { color:rgba(150,150,150,0.5); background-color: rgba(255,255,255,0.4); border:1px solid #e2e2e2;}.nav-section{ background: none repeat scroll 0 0 rgba(255, 255, 255, 0.95);}
+.sn-icons a{ color:#a6a6a6;}
+#nav ul > li > a{	color:#a6a6a6;}
+#bottom-home{ background-color:#f5f5f5;}
+#bottom-home:before{ background-image: url('../img/bottom_home_white.png');}
+#social-stream:after { box-shadow: 0 70px 50px rgba(0,0,0,0.35);}
+#social-stream-items > li{ background:rgba(245,245,245, 0.9);}
+#social-stream-items > li .icon{ background-color:#fff;}
+#social-stream-items > li .icon:after{ border-color: #ffffff transparent transparent transparent;}
+#social-stream-items > li > .title{ background-color:#fff;}
+#social-stream-items > li .tweet h3 .time{ color:#979797;}
+#social-stream-items > li .news{	background-color:rgba(255,255,255,0.9);}
+#social-stream-items > li .news a{ color:#424242;}
+#social-stream-items > li .news .time{ color:#979797;}
+#social-stream-nav li{ background-color:#fff;}
+.ttw-music-player .album-cover { -webkit-box-shadow: 2px 2px 2px rgba(0, 0, 0, .4); -moz-box-shadow: 2px 2px 2px rgba(0, 0, 0, .4); box-shadow: 2px 2px 2px rgba(0, 0, 0, .4);}
+.ttw-music-player .player .title { color: #424242;}
+.ttw-music-player .rating-star {	color:#afafaf;}
+.ttw-music-player .player-controls { background-color: #f2f2f2;}
+.ttw-music-player .previous, .ttw-music-player .next { color:#424242;}
+.ttw-music-player .play, .ttw-music-player .pause {	color:#424242;}
+.ttw-music-player .progress { background-color: #e2e2e2;}
+.ttw-music-player .elapsed { background: #afafaf repeat-x 0 0 scroll;}
+.ttw-music-player .tracklist ol { background-color:#f2f2f2;}
+.ttw-music-player .tracklist li {	border-bottom:1px solid #fff;}
+.page-overlay { background-color:rgba(255,255,255,0.9); -webkit-box-shadow: 10px -10px 10px 10px rgba(0, 0, 0, 0.2); -moz-box-shadow: 10px -10px 10px 10px rgba(0, 0, 0, 0.2); box-shadow: 10px -10px 10px 10px rgba(0, 0, 0, 0.2);}
+.close-overlay{ color:#a2a2a2;}
+#news-txt .quote{ background-color:#f5f5f5; color:#848484;}
+#news-txt .quote:before, #news-txt .quote:after{	color:#afafaf;}
+.other-news-wrap{ background-color:#fff;}
+#other-news li{ border-bottom:1px solid #e2e2e2;}
+#other-news li .other-news-img-wrap .date{ background-color:rgba(255, 255, 255, 0.95);}
+#other-news li .other-news-img-wrap .date:after{ border-color: rgba(255, 255, 255, 0.95) transparent transparent transparent;}
+#bottom-theband:before{background-image: url('../img/bottom_theband_white.png');}
+.band-elem:hover p{ background-color:rgba(255,255,255,0.9);}
+.album .album-info h3 span{ color:#424242;}
+.album .album-info li { background-color:#fff;}
+.album .album-info li span{ color:#848484;}
+.album .album-info li span.time{ color:#afafaf;}
+.album .album-info li.darker { background-color:#f2f2f2;}
+#map_canvas:after{	background-image: url('../img/bottom_concerts_white.png');}
+#concerts-info{ background-color:rgba(255,255,255,0.9);}
+#concerts-info .date{ color:#424242;}
+#complete-list .close-complete-list{ color:#a2a2a2;}
+#complete-list .completeInfo{ background-color:#fff;}
+#complete-list .completeInfo:nth-child(2n+1){ background-color:#f2f2f2;}
+#complete-list .completeInfo .completeDate{ color:#afafaf;}
+#store{ background-image:url('../img/store_white.png'); border-bottom: 40px solid #e2e2e2;}
+.flexslider .slides li h2{ color:#424242;}
+#form-wrap:after{ background-color:#cccccc;}
+#form-wrap:before{	background-color:#969696;}
+#footer{ color:#969696;}
+div.pp_overlay{background:#fff;}
+.pp_gallery ul a{border:1px rgba(255,255,255,0.7) solid;display:block;float:left;height:33px;overflow:hidden}
+
+
+/* Update v1.0.3 */
+#social-stream-items > li .facebook .text { background-color: rgba(255, 255, 255, 0.9); }
+#social-stream-items > li .facebook h3 { color:#696E72 }
+#social-stream-items > li .facebook h3 span { color:#979797 }
+
+.divider-bottom-1 { background-color: #f5f5f5; }
+.divider-bottom-1::before { border-color: transparent transparent #f5f5f5 transparent; }
+.divider-bottom-1::after { border-color: transparent transparent #f5f5f5 transparent; }
+.divider-bottom-1 .tt { background-color: #f5f5f5; }
+.divider-bottom-1 .tt::before { border-color: transparent transparent transparent #f5f5f5; }
+
+.divider-bottom-2 { background-color: #e2e2e2; }
+.divider-bottom-2::before { border-color: transparent transparent #e2e2e2 transparent; }
+.divider-bottom-2::after { border-color: transparent transparent #e2e2e2 transparent; }
+.divider-bottom-2 .tt::before { border-color: transparent transparent transparent #e2e2e2; }
+.divider-bottom-2 .tt::after { border-color: transparent transparent #e2e2e2 transparent; }
+
+.divider-bottom-3::before { border-color: transparent transparent #f5f5f5 transparent; }
+.divider-bottom-3::after { background-color: #f5f5f5; }
+.divider-bottom-3 .tt::before { border-color: transparent transparent transparent #f5f5f5; }
+.divider-bottom-3 .tt::after { border-color: transparent transparent #f5f5f5 transparent; }
+
+.divider-bottom-4 { background-color: #e2e2e2; }
+.divider-bottom-4::before { border-color: transparent transparent transparent #e2e2e2; }
+.divider-bottom-4::after { border-color: transparent transparent #e2e2e2 transparent; }
+.divider-bottom-4 .tt::before { border-color: transparent transparent transparent #e2e2e2; }
+.divider-bottom-4 .tt::after { border-color: transparent #e2e2e2 transparent transparent; }

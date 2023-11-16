@@ -269,28 +269,28 @@
                     </li>
                 @endforeach
                 <li>
-                    <img src="http://local.beat-html.com/html/img/tshirt1.png" alt=""/>
+                    <img src="{{ asset('/html/img/tshirt1.png') }}" alt=""/>
                     <h3 class="color">Beat T-Shirt - White Version</h3>
                     <h2>$10</h2>
                     <a href="#" class="btn btn-default btn-icon"><i
                             class="fa fa-shopping-cart"></i><span>Buy Now!</span></a>
                 </li>
                 <li>
-                    <img src="http://local.beat-html.com/html/img/tshirt2.png" alt=""/>
+                    <img src="{{ asset('/html/img/tshirt2.png') }}" alt=""/>
                     <h3 class="color">Beat Mug</h3>
                     <h2>$7</h2>
                     <a href="#" class="btn btn-default btn-icon"><i
                             class="fa fa-shopping-cart"></i><span>Buy Now!</span></a>
                 </li>
                 <li>
-                    <img src="http://local.beat-html.com/html/img/cd1.png" alt=""/>
+                    <img src="{{ asset('/html/img/cd1.png') }}" alt=""/>
                     <h3 class="color">Beat - First Album</h3>
                     <h2>$19</h2>
                     <a href="#" class="btn btn-default btn-icon"><i
                             class="fa fa-shopping-cart"></i><span>Buy Now!</span></a>
                 </li>
                 <li>
-                    <img src="http://local.beat-html.com/html/img/cd2.png" alt=""/>
+                    <img src="{{ asset('/html/img/cd2.png') }}" alt=""/>
                     <h3 class="color">Beat - DVD</h3>
                     <h2>$39</h2>
                     <a href="#" class="btn btn-default btn-icon"><i
